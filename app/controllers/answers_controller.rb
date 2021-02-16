@@ -5,15 +5,24 @@ class AnswersController < ApplicationController
         @answers = Answer.all.order(id: "DESC")
     end
 
+    def new
+        @answer.Answer.new
+    end
+
     def create
-        answer = Answer.create(answer_params)
-        render json:{answer: post }
+        @answer = Answer.new(answer_params)
+        # render json:{answer: post }
+        if @answer.save
+            redirect_to root_path
+        else
+            render :index
+        end
     end
 
 
     private
 
     def answer_params
-        params.require(:answer).permit(:answer).merge(user_id: current_user.id)
+        params.permit(:answer).merge(user_id: current_user.id)
     end
 end
