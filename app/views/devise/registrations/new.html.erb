@@ -5,7 +5,7 @@
     <h1 class="text-center form-top">新規ユーザー登録</h1>
     <p class="form-signin">※全て必須項目となっております。</p>
   </div>
-<%= form_with model: @user, url: new_user_registration_path, method: :post, class: 'form-signin', local: true do |f| %>
+<%= form_with model: @user, url: user_registration_path, method: :post, class: 'form-signin', local: true do |f| %>
   <div class="form-group">
     <div class='form-text-wrap'>
       <label class="form-text">ニックネーム(最大20文字)</label>
