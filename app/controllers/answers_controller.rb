@@ -5,18 +5,10 @@ class AnswersController < ApplicationController
         @answers = Answer.all.order(id: "DESC")
     end
 
-    def new
-        @answer.Answer.new
-    end
 
     def create
-        @answer = Answer.new(answer_params)
-        # render json:{answer: post }
-        if @answer.save
-            redirect_to root_path
-        else
-            render :index
-        end
+        @answer = Answer.create(answer_params)
+        render json:{post: @answer}
     end
 
 
