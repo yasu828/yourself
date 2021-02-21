@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root to: 'answers#index'
   
   resources :answers
+  resources :satisfactions
 end
