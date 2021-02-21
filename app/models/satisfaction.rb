@@ -1,0 +1,2 @@
+class Satisfaction < ApplicationRecord
+end
