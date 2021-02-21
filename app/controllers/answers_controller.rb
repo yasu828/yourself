@@ -11,6 +11,10 @@ class AnswersController < ApplicationController
         render json:{post: @answer}
     end
 
+    def show
+        @answers = Answer.find(params[:id])
+    end
+
 
     private
 

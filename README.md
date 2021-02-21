@@ -1,24 +1,37 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## usersテーブル
+| Colum             | Type       | Options                  |
+| ----------------- | ---------- | ------------------------ |
+| email             | string     | unique: true, null: false|
+| encrypted_password| string     | null: false              |
+| nickname          | string     | null: false              |
+| birth             | date       | null: false              |
 
-Things you may want to cover:
+### Associa
+- has_many: user_answers
 
-* Ruby version
+## answersテーブル
 
-* System dependencies
+| Colum             | Type       | Options                  |
+| ----------------- | ---------- | ------------------------ |
+| answer            | text       | null: false              |
 
-* Configuration
 
-* Database creation
+## user_answersテーブル
 
-* Database initialization
+| Colum             | Type       | Options                  |
+| ----------------- | ---------- | ------------------------ |
+| answer            | text       | null: false              |
+| user              | references | foreign_key: true        |
 
-* How to run the test suite
+### Association
+- belong_to: user
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+## satisfactionsテーブル
 
-* ...
+| Colum             | Type       | Options                  |
+| ----------------- | ---------- | ------------------------ |
+| times             | integer    | null: false              |
+| satisfaction      | integer    | null: false              |
