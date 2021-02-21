@@ -1,0 +1,2 @@
+class SatisfactionsController < ApplicationController
+end
