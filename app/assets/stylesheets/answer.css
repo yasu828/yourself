@@ -1,0 +1,22 @@
+.mokuhyo{
+    resize: none;
+}
+
+.sepa{
+    display: flex;
+}
+
+.anslist{
+    display: flex;
+}
+
+.postlist{
+    height: 50px;
+    width: 180px;
+}
+
+.conectline{
+    height: 5px;
+    width: 15px;
+    border: orangered 3px;
+}

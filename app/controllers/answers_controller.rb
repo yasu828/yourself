@@ -5,7 +5,6 @@ class AnswersController < ApplicationController
         @answers = Answer.all.order(id: "DESC")
     end
 
-
     def create
         @answer = Answer.create(answer_params)
         render json:{post: @answer}

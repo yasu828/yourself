@@ -1,21 +1,36 @@
 <h1>hello</h1>
 <%= link_to '分析一覧にいく', answer_path(current_user), method: :get, class: "login" %>
-<div>
-    <%= form_with url: answers_path, local: true, method: :post, id: "form" do |form| %>
-        <%= form.text_field :answer  , id: "answer"%>
-        <%= form.submit '投稿する' , id: "submit" %>
-    <% end %>
+<div class="form-group">
+    <div class="sepa">
+        <div class="mokuhyou">
+                <textarea cols="35" id="page_content" name="page[content]" rows="3" class="mokuhyo bi bi-square"></textarea>
+        </div >
+        <div id="list">
+        </div>
+        <div class="anslist border">
+            <% @answers.each do |ans| %>
+                <div class="post" data-id=<%= ans.id %>>
+                    <div class="postlist">
+                    投稿日時：<%= ans.created_at %>
+                    </div>
+                    <div class="postlist">
+                    <%= ans.answer %>
+                    </div>
+                    <div class="conectline border"></div>
+                </div>
+            <% end %>
+        </div>
 
-    <div id="list">
-    </div>
-    <% @answers.each do |ans| %>
-    <div class="post" data-id=<%= ans.id %>>
-        <div class="post-date">
-        投稿日時：<%= ans.created_at %>
+        <%= form_with url: answers_path, local: true, method: :post, id: "form" do |form| %>
+            
+            <%= form.text_field :answer  , id: "answer"%>
+            <%= form.submit '投稿する' , id: "submit" %>
+        <% end %>
+            
+        <div id="addinc">
         </div>
-        <div class="post-content">
-        <%= ans.answer %>
-        </div>
+
+
     </div>
-<% end %>
+    <%= button_to "増やすボタン", {controller: 'answers', action: 'index'}, {method: :get, id: "incbtn"} %>
 </div>
