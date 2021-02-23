@@ -2,12 +2,25 @@
     resize: none;
 }
 
-.sepa{
+.form-group{
     display: flex;
 }
 
-.anslist{
-    display: flex;
+.side-list{
+    width: 15vw;
+    margin: 5px 5px;    
+}
+
+.menu-list{
+    width: 170px;
+    height: 280px;
+    border: 2px red solid;
+}
+
+
+.sepa{
+    width: 85vw;
+    
 }
 
 .postlist{

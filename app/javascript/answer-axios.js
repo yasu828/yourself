@@ -11,10 +11,10 @@ window.addEventListener("load", () => {
         const formText = document.getElementById("answer");
         const HTML = `
                   <div class="post" data-id=${item.id}>
-                    <div class="post-date">
+                    <div class="postlist">
                       投稿日時：${item.created_at}
                     </div>
-                    <div class="post-content">
+                    <div class="postlist">
                     ${item.answer}
                     </div>
                   </div>`;
