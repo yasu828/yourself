@@ -1,5 +1,32 @@
-.mokuhyo{
+.homebody{
+    font-size: 2rem;
+    width: 800px;
+    margin: 0 auto;
+    min-height: 100vh;
+    display: grid;
+    grid-template:
+        "header header header"
+        "left   center right"
+        "footer footer footer";
+}
+
+nav{
+}
+
+main{
+}
+
+aside{
+}
+
+footer{
+}
+
+@media screen and (max-width: 1000px) {
+}
+/* .mokuhyo{
     resize: none;
+    padding: 10px;
 }
 
 .form-group{
@@ -20,12 +47,18 @@
 
 .sepa{
     width: 85vw;
-    
 }
 
 .postlist{
-    height: 50px;
-    width: 180px;
+    /* height: 50px; */
+    /* width: 180px;
+
+}
+
+.post{
+    
+    border: 1px lightgreen solid;
+    padding: 3px;
 }
 
 .conectline{
@@ -33,3 +66,13 @@
     width: 15px;
     border: orangered 3px;
 }
+
+.ansdef{
+    display: flex;
+    justify-content: space-around;
+}
+
+.ansnum{
+   
+    margin-left: 15px;
+}  */
