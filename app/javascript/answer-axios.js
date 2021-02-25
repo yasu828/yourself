@@ -7,7 +7,7 @@ window.addEventListener("load", () => {
     axios.post('/answers', formData)
       .then(function (res) {
         const item = res.data.post;
-        const list = document.getElementById("list");
+        const list = document.getElementById("anslist");
         const formText = document.getElementById("answer");
         const HTML = `
                   <div class="post" data-id=${item.id}>

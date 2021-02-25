@@ -1,30 +1,52 @@
 .homebody{
-    font-size: 2rem;
+    /* font-size: 2rem; */
     width: 800px;
-    margin: 0 auto;
+    background-color: beige;
+    border: black solid 1px;
+    margin: 0 20px;
     min-height: 100vh;
     display: grid;
     grid-template:
-        "header header header"
-        "left   center right"
-        "footer footer footer";
+        "...... ...... ...... ...... ......" 10px
+        "header header header header header" 15px
+        "...... ...... ...... ...... ......" 10px
+        "left   ...... center ...... right"  1fr
+        "...... ...... ...... ...... ......" 5px
+        "footer footer footer footer footer" 150px
+        / 150px 5px 1fr 5px 60px;
+}
+
+header{
+    grid-area: header;
 }
 
 nav{
+    grid-area: left;
 }
 
 main{
+    grid-area: center;
 }
 
 aside{
+    grid-area: right;
 }
 
 footer{
+    grid-area: footer;
 }
 
 @media screen and (max-width: 1000px) {
+    /* .homebody{
+        grid-template:
+        "header"     150px
+        "left  "     
+        "center"     1fr
+        "right "     
+        "footer"     300px;
+    } */
 }
-/* .mokuhyo{
+.mokuhyo{
     resize: none;
     padding: 10px;
 }
@@ -50,8 +72,8 @@ footer{
 }
 
 .postlist{
-    /* height: 50px; */
-    /* width: 180px;
+    height: 50px;
+    width: 180px;
 
 }
 
@@ -75,4 +97,4 @@ footer{
 .ansnum{
    
     margin-left: 15px;
-}  */
+} 

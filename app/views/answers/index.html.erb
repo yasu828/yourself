@@ -1,4 +1,4 @@
-<div class="homebody">
+<div class="UI_Build_Assistant homebody">
     <nav>left
         <h1>hello</h1>
         <%= link_to '分析一覧にいく', answer_path(current_user), method: :get, class: "login" %>
@@ -38,7 +38,54 @@
                         <% end %>
                         <div id="addinc">
                         </div>
-                    </div>            
+                    </div>   
+                    <div class="ansnum">
+                        <div class="border">
+                            <% @answers.each do |ans| %>
+                                <div class="post" data-id=<%= ans.id %>>
+                                    <div class="postlist">
+                                    投稿日時：<%= ans.created_at %>
+                                    </div>
+                                    <div class="postlist">
+                                    <%= ans.answer %>
+                                    </div>
+                                    <div class="conectline border"></div>
+                                </div>
+                            <% end %>
+                        </div>
+
+                        <%= form_with url: answers_path, local: true, method: :post, id: "form" do |form| %>
+                            
+                            <%= form.text_field :answer  , id: "answer"%>
+                            <%= form.submit '投稿する' , id: "submit" %>
+                        <% end %>
+                        <div id="addinc">
+                        </div>
+                    </div>   
+                    <div class="ansnum">
+                        <div class="border">
+                            <% @answers.each do |ans| %>
+                                <div class="post" data-id=<%= ans.id %>>
+                                    <div class="postlist">
+                                    投稿日時：<%= ans.created_at %>
+                                    </div>
+                                    <div class="postlist">
+                                    <%= ans.answer %>
+                                    </div>
+                                    <div class="conectline border"></div>
+                                </div>
+                            <% end %>
+                        </div>
+
+                        <%= form_with url: answers_path, local: true, method: :post, id: "form" do |form| %>
+                            
+                            <%= form.text_field :answer  , id: "answer"%>
+                            <%= form.submit '投稿する' , id: "submit" %>
+                        <% end %>
+                        <div id="addinc">
+                        </div>
+                    </div>   
+
                 </div>    
             </div>
         </div>
