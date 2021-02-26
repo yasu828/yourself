@@ -10,86 +10,73 @@
             </ul>
         </div>
     </nav>
-    <main>main
-        <div class="sepa">
-            <div class="mokuhyou form-signin text-center">
-                <textarea cols="35" id="page_content" name="page[content]" rows="3" class="mokuhyo bi bi-square"></textarea>
-                
-                <div class="ansdef">
-                    <div class="ansnum">
-                        <div class="border">
-                            <% @answers.each do |ans| %>
-                                <div class="post" data-id=<%= ans.id %>>
-                                    <div class="postlist">
-                                    投稿日時：<%= ans.created_at %>
-                                    </div>
-                                    <div class="postlist">
-                                    <%= ans.answer %>
-                                    </div>
-                                    <div class="conectline border"></div>
-                                </div>
-                            <% end %>
-                        </div>
-
-                        <%= form_with url: answers_path, local: true, method: :post, id: "form" do |form| %>
-                            
-                            <%= form.text_field :answer  , id: "answer"%>
-                            <%= form.submit '投稿する' , id: "submit" %>
-                        <% end %>
-                        <div id="addinc">
-                        </div>
-                    </div>   
-                    <div class="ansnum">
-                        <div class="border">
-                            <% @answers.each do |ans| %>
-                                <div class="post" data-id=<%= ans.id %>>
-                                    <div class="postlist">
-                                    投稿日時：<%= ans.created_at %>
-                                    </div>
-                                    <div class="postlist">
-                                    <%= ans.answer %>
-                                    </div>
-                                    <div class="conectline border"></div>
-                                </div>
-                            <% end %>
-                        </div>
-
-                        <%= form_with url: answers_path, local: true, method: :post, id: "form" do |form| %>
-                            
-                            <%= form.text_field :answer  , id: "answer"%>
-                            <%= form.submit '投稿する' , id: "submit" %>
-                        <% end %>
-                        <div id="addinc">
-                        </div>
-                    </div>   
-                    <div class="ansnum">
-                        <div class="border">
-                            <% @answers.each do |ans| %>
-                                <div class="post" data-id=<%= ans.id %>>
-                                    <div class="postlist">
-                                    投稿日時：<%= ans.created_at %>
-                                    </div>
-                                    <div class="postlist">
-                                    <%= ans.answer %>
-                                    </div>
-                                    <div class="conectline border"></div>
-                                </div>
-                            <% end %>
-                        </div>
-
-                        <%= form_with url: answers_path, local: true, method: :post, id: "form" do |form| %>
-                            
-                            <%= form.text_field :answer  , id: "answer"%>
-                            <%= form.submit '投稿する' , id: "submit" %>
-                        <% end %>
-                        <div id="addinc">
-                        </div>
-                    </div>   
-
-                </div>    
-            </div>
-        </div>
+    <main>
+        <textarea cols="35" id="page_content" name="page[content]" rows="3" class="main-top bi bi-square"></textarea>
     </main>
+
+    <div class="main-left">左
+        <% @answers.each do |ans| %>
+            <div class="post" data-id=<%= ans.id %>>
+                <div class="postlist">
+                    投稿日時：<%= ans.created_at %>
+                </div>
+                <div class="postlist">
+                    <%= ans.answer %>
+                </div>
+                <div class="conectline border">
+                </div>
+            </div>
+        <% end %>       
+        <%= form_with url: answers_path, local: true, method: :post, id: "form" do |form| %>
+            
+            <%= form.text_field :answer  , id: "answer"%>
+            <%= form.submit '投稿する' , id: "submit" %>
+        <% end %> 
+        <div id="addinc">
+        </div>
+    </div>
+    <div class="main-center">かな
+        <% @answers.each do |ans| %>
+            <div class="post" data-id=<%= ans.id %>>
+                <div class="postlist">
+                    投稿日時：<%= ans.created_at %>
+                </div>
+                <div class="postlist">
+                    <%= ans.answer %>
+                </div>
+                <div class="conectline border"></div>
+            </div>
+        <% end %>        
+        <%= form_with url: answers_path, local: true, method: :post, id: "form" do |form| %>
+            
+            <%= form.text_field :answer  , id: "answer"%>
+            <%= form.submit '投稿する' , id: "submit" %>
+        <% end %> 
+        <div id="addinc">
+        </div>
+    </div>
+    <div class="main-right">右
+        <% @answers.each do |ans| %>
+            <div class="post" data-id=<%= ans.id %>>
+                <div class="postlist">
+                    投稿日時：<%= ans.created_at %>
+                </div>
+                <div class="postlist">
+                    <%= ans.answer %>
+                </div>
+                <div class="conectline border"></div>
+            </div>
+        <% end %>
+        <%= form_with url: answers_path, local: true, method: :post, id: "form" do |form| %>
+            
+            <%= form.text_field :answer  , id: "answer"%>
+            <%= form.submit '投稿する' , id: "submit" %>
+        <% end %>
+        <div id="addinc">
+        </div>
+    </div>
+
+
     <aside>right</aside>
     <%# <%= button_to "増やすボタン", {controller: 'answers', action: 'index'}, {method: :get, id: "incbtn"} %> 
 </div>

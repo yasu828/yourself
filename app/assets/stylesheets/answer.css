@@ -1,19 +1,20 @@
 .homebody{
     /* font-size: 2rem; */
-    width: 800px;
+    width: 100vw;
     background-color: beige;
     border: black solid 1px;
     margin: 0 20px;
     min-height: 100vh;
     display: grid;
     grid-template:
-        "...... ...... ...... ...... ......" 10px
-        "header header header header header" 15px
-        "...... ...... ...... ...... ......" 10px
-        "left   ...... center ...... right"  1fr
-        "...... ...... ...... ...... ......" 5px
-        "footer footer footer footer footer" 150px
-        / 150px 5px 1fr 5px 60px;
+        "......  ......     ......       ......      ......" 10px
+        "header  header     header       header      header" 15px
+        "......  ......     ......       ......      ......" 5px
+        "left    ......     center       center      right"  160px
+        "left    main-left  main-center  main-right  right" 1fr
+        "......  ......     ......       ......      ......" 120px
+        "footer  footer     footer       footer      footer" 150px
+        / 180px  1fr        1fr          1fr         1fr;
 }
 
 header{
@@ -26,6 +27,16 @@ nav{
 
 main{
     grid-area: center;
+}
+
+.main-left{
+    grid-area: main-left;
+}
+.main-center{
+    grid-area: main-center;
+}
+.main-right{
+    grid-area: main-right;
 }
 
 aside{
