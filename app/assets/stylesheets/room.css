@@ -1,0 +1,54 @@
+.roombody{
+    width: 100vw;
+    background-color: beige;
+    border: black solid 1px;
+    margin: 0 20px;
+    min-height: 100vh;
+    display: grid;
+    grid-template:
+        "......  ......     ......       ......      ......" 10px
+        "header  header     header       header      header" 15px
+        "......  ......     ......       ......      ......" 5px
+        "left    center     center       center      right"  160px
+        "left    main-left  main-center  main-right  right" 1fr
+        "......  ......     ......       ......      ......" 120px
+        "footer  footer     footer       footer      footer" 150px
+        / 180px  1fr        1fr          1fr         1fr;
+}
+
+header{
+    grid-area: header;
+}
+
+nav{
+    grid-area: left;
+}
+
+main{
+    grid-area: center;
+}
+.main-top{
+    display: block;
+    margin: 25px auto 5px;
+}
+
+.main-left{
+    grid-area: main-left;
+    padding: 0 3px;
+}
+.main-center{
+    grid-area: main-center;
+    padding: 0 3px;
+}
+.main-right{
+    grid-area: main-right;
+    padding: 0 3px;
+}
+
+aside{
+    grid-area: right;
+}
+
+footer{
+    grid-area: footer;
+}
