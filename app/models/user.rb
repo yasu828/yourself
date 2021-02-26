@@ -3,4 +3,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :answers
+  has_many :room_users
+  has_many :rooms, through: :room_users
 end
