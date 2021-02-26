@@ -11,7 +11,8 @@
         </div>
     </nav>
     <main>
-        <textarea cols="35" id="page_content" name="page[content]" rows="3" class="main-top bi bi-square"></textarea>
+        <p class="text-center">目標を入力しよう</p>
+        <textarea class="main-top" cols="35" id="page_content" name="page[content]" rows="3"></textarea>
     </main>
 
     <div class="main-left">左
@@ -35,7 +36,7 @@
         <div id="addinc">
         </div>
     </div>
-    <div class="main-center">かな
+    <div class="main-center">中
         <% @answers.each do |ans| %>
             <div class="post" data-id=<%= ans.id %>>
                 <div class="postlist">

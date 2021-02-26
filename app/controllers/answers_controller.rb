@@ -2,7 +2,7 @@ class AnswersController < ApplicationController
     before_action :authenticate_user!
 
     def index
-        @answers = Answer.all.order(id: "DESC")
+        @answers = Answer.all
     end
 
     def create
