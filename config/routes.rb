@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'answers#index'
+  root to: 'rooms#index'
   
-  resources :rooms,  only: [:new] do
-    resources :answers
-  end
+  resources :rooms,  only: [:index, :new, :create] 
+  #   resources :answers
+  # end
   resources :satisfactions
 end
