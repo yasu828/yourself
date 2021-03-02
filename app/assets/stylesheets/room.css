@@ -1,0 +1,37 @@
+.roombody{
+    width: 100vw;
+    background-color: beige;
+    border: black solid 1px;
+    margin: 0 20px;
+    min-height: 100vh;
+    display: grid;
+    grid-template:
+        "......  ......     ......     ......      ......" 10px
+        "header  header     header     header      header" 15px
+        "......  ......     ......     ......      ......" 5px
+        "left    analysis   analysis   analysis    right"  160px
+        "left    explan     explan     explan      right" 1fr
+        "......  explan     explan     explan      ......" 120px
+        "footer  footer     footer     footer      footer" 150px
+        / 180px  1fr        1fr        1fr         180px;
+}
+
+header{
+    grid-area: header;
+}
+
+nav{
+    grid-area: left;
+}
+
+.analysis{
+    grid-area: analysis;
+    padding: 30px 3px;
+    text-align: center;
+}
+
+.explan{
+    grid-area: explan;
+    padding: 30px 3px;
+    text-align: center;
+}
