@@ -2,69 +2,33 @@
     <%= render "shared/side_list" %>
     <main>
         <p class="text-center">目標を入力しよう</p>
-        <textarea class="main-top" cols="35" id="page_content" name="page[content]" rows="3"></textarea>
+        
     </main>
 
     <div class="main-left">左
-        <% @answers.each do |ans| %>
-            <div class="post" data-id=<%= ans.id %>>
-                <div class="postlist">
-                    投稿日時：<%= ans.created_at %>
-                </div>
-                <div class="postlist">
-                    <%= ans.answer %>
-                </div>
-                <div class="conectline border">
-                </div>
-            </div>
-        <% end %>       
-        <%= form_with url: answers_path, local: true, method: :post, id: "form" do |form| %>
+        <%# <% [@room,@answers].each do |ans| %> %>
+            <%# <div class="post" data-id=<%= ans.answer.id %>> %>
+                <%# <div class="postlist"> %>
+                    <%# 投稿日時：<%= ans.created_at %> %>
+                <%# </div> %>
+                <%# <div class="postlist"> %>
+                    <%# <%= ans.answer %> %>
+                <%# </div> %>
+                <%# <div class="conectline border"> %>
+                <%# </div> %>
+            <%# </div> %>
+        <%# <% end %>        %>
+        <%= form_with model: [@room, @answer], local: true, id: "form" do |form| %>
             
-            <%= form.text_field :answer  , id: "answer"%>
+            <%= form.text_field :answer, id: "answer" %>
             <%= form.submit '投稿する' , id: "submit" %>
         <% end %> 
         <div id="addinc">
         </div>
     </div>
     <div class="main-center">中
-        <% @answers.each do |ans| %>
-            <div class="post" data-id=<%= ans.id %>>
-                <div class="postlist">
-                    投稿日時：<%= ans.created_at %>
-                </div>
-                <div class="postlist">
-                    <%= ans.answer %>
-                </div>
-                <div class="conectline border"></div>
-            </div>
-        <% end %>        
-        <%= form_with url: answers_path, local: true, method: :post, id: "form" do |form| %>
-            
-            <%= form.text_field :answer  , id: "answer"%>
-            <%= form.submit '投稿する' , id: "submit" %>
-        <% end %> 
-        <div id="addinc">
-        </div>
     </div>
     <div class="main-right">右
-        <% @answers.each do |ans| %>
-            <div class="post" data-id=<%= ans.id %>>
-                <div class="postlist">
-                    投稿日時：<%= ans.created_at %>
-                </div>
-                <div class="postlist">
-                    <%= ans.answer %>
-                </div>
-                <div class="conectline border"></div>
-            </div>
-        <% end %>
-        <%= form_with url: answers_path, local: true, method: :post, id: "form" do |form| %>
-            
-            <%= form.text_field :answer  , id: "answer"%>
-            <%= form.submit '投稿する' , id: "submit" %>
-        <% end %>
-        <div id="addinc">
-        </div>
     </div>
 
 

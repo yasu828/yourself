@@ -10,7 +10,7 @@ class RoomsController < ApplicationController
     def create
         @room = Room.new(room_params)
         if @room.save
-            redirect_to root_path
+            redirect_to room_answers_path(@room)
         else
             render :new
         end
@@ -21,7 +21,7 @@ class RoomsController < ApplicationController
     private
 
     def room_params
-        params.require(:room).permit(:name, user_ids: [])
+        params.require(:room).permit(:target).merge(user_id: current_user.id)
     end
 
 
