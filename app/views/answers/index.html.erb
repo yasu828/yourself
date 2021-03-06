@@ -1,24 +1,13 @@
 <div class="UI_Build_Assistant homebody">
     <%= render "shared/side_list" %>
-    <main>
-        <p class="text-center">目標を入力しよう</p>
-
-        
+    <main class="text-center">
+        <%= @room.target %>
+        <p class="text-center">何故そうありたいですか？</p>
     </main>
 
     <div class="main-left">左
-        <%# <% [@room,@answers].each do |ans| %> %>
-            <%# <div class="post" data-id=<%= ans.answer.id %>> %>
-                <%# <div class="postlist"> %>
-                    <%# 投稿日時：<%= ans.created_at %> %>
-                <%# </div> %>
-                <%# <div class="postlist"> %>
-                    <%# <%= ans.answer %> %>
-                <%# </div> %>
-                <%# <div class="conectline border"> %>
-                <%# </div> %>
-            <%# </div> %>
-        <%# <% end %>        %>
+    <%= render partial: 'ans' %>
+  
         <%= form_with model: [@room, @answer], local: true, id: "form" do |f| %>
             <%= f.text_field :ans, id: "answer" %>
             <%= f.submit '投稿する' , id: "submit" %>
@@ -26,8 +15,10 @@
         <div id="addinc">
         </div>
     </div>
+
     <div class="main-center">中
     </div>
+
     <div class="main-right">右
     </div>
 
