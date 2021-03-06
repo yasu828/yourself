@@ -2,5 +2,5 @@ class Answer < ApplicationRecord
     belongs_to :user
     belongs_to :room
 
-    validates :answer, presence: true
+    validates :ans, presence: true
 end

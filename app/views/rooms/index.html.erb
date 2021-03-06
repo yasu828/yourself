@@ -1,7 +1,7 @@
 <div class="roombody">
     <%= render "shared/side_list" %>
     <div class="analysis">
-        <a href="/rooms/new">'自己分析をする'</a>
+        <%= link_to '自己分析する', new_room_path %>
       
         <p><%= link_to '過去の分析一覧', url:"#"%></p>
     </div>
