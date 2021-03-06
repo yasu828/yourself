@@ -1,0 +1,2 @@
+class RightAnswersController < ApplicationController
+end

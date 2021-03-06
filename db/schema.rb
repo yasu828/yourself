@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_05_043652) do
+ActiveRecord::Schema.define(version: 2021_03_06_153428) do
 
   create_table "answers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "ans", null: false
@@ -20,6 +20,16 @@ ActiveRecord::Schema.define(version: 2021_03_05_043652) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["room_id"], name: "index_answers_on_room_id"
     t.index ["user_id"], name: "index_answers_on_user_id"
+  end
+
+  create_table "right_answers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "rightans", null: false
+    t.bigint "user_id"
+    t.bigint "room_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["room_id"], name: "index_right_answers_on_room_id"
+    t.index ["user_id"], name: "index_right_answers_on_user_id"
   end
 
   create_table "rooms", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -53,5 +63,7 @@ ActiveRecord::Schema.define(version: 2021_03_05_043652) do
 
   add_foreign_key "answers", "rooms"
   add_foreign_key "answers", "users"
+  add_foreign_key "right_answers", "rooms"
+  add_foreign_key "right_answers", "users"
   add_foreign_key "rooms", "users"
 end

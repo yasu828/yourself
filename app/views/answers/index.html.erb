@@ -6,7 +6,10 @@
     </main>
 
     <div class="main-left">左
-    <%= render partial: 'ans' %>
+    </div>
+
+    <div class="main-center">中
+        <%= render partial: 'ans' %>
   
         <%= form_with model: [@room, @answer], local: true, id: "form" do |f| %>
             <%= f.text_field :ans, id: "answer" %>
@@ -14,9 +17,6 @@
         <% end %> 
         <div id="addinc">
         </div>
-    </div>
-
-    <div class="main-center">中
     </div>
 
     <div class="main-right">右
