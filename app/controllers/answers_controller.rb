@@ -3,8 +3,11 @@ class AnswersController < ApplicationController
 
     def index
         @answer = Answer.new(answer_params)
+        @right_answer = RightAnswer.new(right_answer_params)
         @room = Room.find(params[:room_id])
         @answers = @room.answers.includes(:user)
+        
+        @right_answers = @room.right_answers.includes(:user)
     end
 
     def new
@@ -18,7 +21,8 @@ class AnswersController < ApplicationController
             user_id: current_user.id,
             ans: answer_params[:answer][:ans]
           )
-          redirect_to room_answers_path(@room)
+          render json:{post: post }
+        #   redirect_to room_answers_path(@room)
         else
             @answers = @room.ans.includes(:user)
             render :index
@@ -37,4 +41,9 @@ class AnswersController < ApplicationController
     def answer_params
         params.permit(:room_id, answer:[:ans]).merge(user_id: current_user.id)
     end
+
+    def right_answer_params
+        params.permit(:room_id, right_answer:[:rightans]).merge(user_id: current_user.id)
+    end
+
 end
