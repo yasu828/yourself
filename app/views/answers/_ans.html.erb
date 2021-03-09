@@ -1,9 +1,11 @@
 <% @answers.each do |a| %>
+<% if a.ans == "ああ" %>
     <div class="postlist">
         投稿日時：<%= a.ans %>
     </div>
-<% if a.ans == "ああ" %>
-af
+    <% next %>
+<% else %>
+    <% next %>
 <% end %>
 
     <div class="postlist">

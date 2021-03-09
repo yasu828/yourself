@@ -6,17 +6,18 @@
     </main>
 
     <div class="main-left">左
-    <%= form_with model: [@room, @answer], local: true, id: "form" do |f| %>
-            <%= f.text_field :ans, id: "answer", value:"初期左" %>>
-            <%= f.submit '投稿する' , id: "submit" %>
-        <% end %> 
+    <%# <%= form_with model: [@room, @answer], local: true, id: "form" do |f| %> %>
+            <%# <%= f.text_field :ans, id: "answer", value:"初期左" %>> %>
+            <%# <%= f.submit '投稿する' , id: "submit" %> %>
+        <%# <% end %>  %>
     </div>
 
     <div class="main-center">中
         <%= render partial: 'ans' %>
   
         <%= form_with model: [@room, @answer], local: true, id: "form" do |f| %>
-            <%= f.text_field :ans, id: "answer", value:"初期" %>>
+            <%= f.text_field :ans, id: "answer" %>
+            <%= f.select :point, [["左です！","1"]] %>
             <%= f.submit '投稿する' , id: "submit" %>
         <% end %> 
         <div id="addinc">
@@ -24,7 +25,7 @@
     </div>
 
     <div class="main-right">右
-        <%= render 'right_answers/right_index' %>
+       
     </div>
 
 
