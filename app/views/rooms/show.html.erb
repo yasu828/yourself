@@ -16,7 +16,7 @@
         <% @answers.each do |an| %>
           <p>
             <strong><%= link_to an.user.nickname, "/users/#{an.user_id}" %>：</strong>
-            <%= an.text %>
+            <%= an.ans %>
           </p>
         <% end %>
     <% end %>
