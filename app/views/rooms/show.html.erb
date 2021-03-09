@@ -1,0 +1,26 @@
+<div class="main-center">中
+  <%= @room.target %>
+        <%# <%= form_with model: [@room, @answer], local: true, id: "form" do |f| %> %>
+            <%# <%= f.text_field :ans, id: "ans" %> %>
+            <%# <%= f.select :point, [["左です！","1"]] %> %>
+            <%# <%= f.submit '投稿する' , id: "submit" %> %>
+        <%# <% end %>  %>
+    <%= form_with model: [@room, @answer] do |f| %>
+        <%= f.text_area :ans, placeholder: "コメントする", rows: "2" %>
+        <%= f.select :point, [["左です！","1"]] %>
+        <%= f.submit "SEND" %>
+    <% end %>
+
+    <% if @answers %>
+    ぽぽぽ
+        <% @answers.each do |an| %>
+          <p>
+            <strong><%= link_to an.user.nickname, "/users/#{an.user_id}" %>：</strong>
+            <%= an.text %>
+          </p>
+        <% end %>
+    <% end %>
+
+        <div id="addinc">
+        </div>
+</div>

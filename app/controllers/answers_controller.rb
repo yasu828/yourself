@@ -1,33 +1,27 @@
 class AnswersController < ApplicationController
-    before_action :authenticate_user!
 
     def index
-        @answer = Answer.new(answer_params)
-        @room = Room.find(params[:room_id])
-        @answers = @room.answers.includes(:user)
+        # @room = Room.find(params[:room_id])
+        # @answer = Answer.new(ans_params)
+        # @answer.save
     end
 
-    def new
-    end
+    # def new
+    # end
 
     def create
-        
+        @answer = Answer.new(ans_params)
+        @answer.save
         @room = Room.find(params[:room_id])
-        if @room.answers.create(
-            user_id: current_user.id,
-            ans: answer_params[:answer][:ans],
-            point: answer_params[:answer][:point]
-          )
-          redirect_to root_path
-        else
-            @answers = @room.ans.includes(:user)
-            render :index
-        end
+        
+        redirect_to room_path(@room.id)
     end
+
 
     private
 
-    def answer_params
-        params.permit(:room_id, answer:[:ans], answer:[:point]).merge(user_id: current_user.id)
+    def ans_params
+        params.require(:answer).permit(:ans,:point,:room_id,:user_id).merge(user_id: current_user.id, room_id: params[:room_id])
     end
+
 end

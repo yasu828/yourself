@@ -4,5 +4,4 @@ class User < ApplicationRecord
 
          has_many :rooms
          has_many :answers
-         has_many :right_answers
 end

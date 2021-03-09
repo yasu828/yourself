@@ -2,6 +2,7 @@ class RoomsController < ApplicationController
     before_action :authenticate_user!
 
     def index
+        @rooms = Room.all
     end
 
     def new
@@ -11,13 +12,19 @@ class RoomsController < ApplicationController
     def create
         @room = Room.new(room_params)
         if @room.save
-            redirect_to room_answers_path(@room)
+            redirect_to room_path(@room.id)
         else
             render :new
         end
     end
 
-
+    def show
+        @rooms = Room.all
+        @room = Room.find(params[:id])
+        @answer = Answer.new
+        @answer.save
+        @answers = @room.answers.includes(:user)
+    end
 
     private
 
