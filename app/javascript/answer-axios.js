@@ -4,8 +4,9 @@
 //   submit.addEventListener("click", (e) => {
 //     const formData = new FormData(document.getElementById("form"));
 //     e.preventDefault();
-//     axios.post('/answers', formData)
-//       .then(function (res) {
+//     axios.post('/rooms/:room_id/answers', formData)
+//         .then(function (res) {
+//             console.log(res);
 //         const item = res.data.post;
 //         const list = document.getElementById("anslist");
 //         const formText = document.getElementById("answer");

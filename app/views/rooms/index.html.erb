@@ -4,6 +4,10 @@
         <%= link_to '自己分析する', new_room_path %>
       
         <p><%= link_to '過去の分析一覧', url:"#"%></p>
+        <% @rooms.each do |room| %>
+        <%= link_to "#{room.target}", room_path(room.id) %>
+        <p></p>
+        <% end %>
     </div>
     
     <div class="explan">
