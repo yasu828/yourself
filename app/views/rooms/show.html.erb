@@ -1,26 +1,58 @@
-<div class="main-center">中
-  <%= @room.target %>
-        <%# <%= form_with model: [@room, @answer], local: true, id: "form" do |f| %> %>
-            <%# <%= f.text_field :ans, id: "ans" %> %>
-            <%# <%= f.select :point, [["左です！","1"]] %> %>
-            <%# <%= f.submit '投稿する' , id: "submit" %> %>
-        <%# <% end %>  %>
-    <%= form_with model: [@room, @answer] do |f| %>
-        <%= f.text_area :ans, placeholder: "コメントする", rows: "2" %>
-        <%= f.select :point, [["左です！","1"]] %>
-        <%= f.submit "SEND" %>
-    <% end %>
+<div class="UI_Build_Assistant homebody">
+    <main class="text-center">
+        <%= @room.target %>
+        <p class="text-center">何故そうありたいですか？</p>
+    </main>
 
-    <% if @answers %>
-    ぽぽぽ
+    <div class="main-left">左
         <% @answers.each do |an| %>
-          <p>
-            <strong><%= link_to an.user.nickname, "/users/#{an.user_id}" %>：</strong>
-            <%= an.ans %>
-          </p>
+            <% if an.point == 1 %>
+                <br><%= an.ans %>
+                <% next %>
+            <% else %>
+                <% next %>
+            <% end %>
         <% end %>
-    <% end %>
+        <%= form_with model: [@room, @answer] do |f| %>
+            <%= f.text_area :ans, placeholder: "コメントする", rows: "1" %>
+            <%= f.select :point, [["左です！","1"]] %>
+            <%= f.submit "SEND" %>
+        <% end %>
+    </div>
 
-        <div id="addinc">
-        </div>
+    <div class="main-center">中
+            <% @answers.each do |an| %>
+                <% if an.point == 2 %>
+                    <br>
+                    <%= an.ans %>
+                    <% next %>
+                <% else %>
+                    <% next %>
+                <% end %>
+            <% end %>
+        <%= form_with model: [@room, @answer] do |f| %>
+            <%= f.text_area :ans, placeholder: "コメントする", rows: "1" %>
+            <%= f.select :point, [["中です！","2"]] %>
+            <%= f.submit "SEND" %>
+        <% end %>
+    </div>
+
+    <div class="main-right">右
+        <% @answers.each do |an| %>
+            <% if an.point == 3 %>
+                <br><%= an.ans %>
+                <% next %>
+            <% else %>
+                <% next %>
+            <% end %>
+        <% end %>
+        <%= form_with model: [@room, @answer] do |f| %>
+            <%= f.text_area :ans, placeholder: "コメントする", rows: "1" %>
+            <%= f.select :point, [["右です！","3"]] %>
+            <%= f.submit "SEND" %>
+        <% end %>
+    </div>
+
+    <aside>right</aside>
+    
 </div>
