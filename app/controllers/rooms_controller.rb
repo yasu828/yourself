@@ -20,8 +20,7 @@ class RoomsController < ApplicationController
 
     def show
         @room = Room.find(params[:id])
-        @answer = Answer.new
-        @answer.save
+        @answer = Answer.create
         @answers = @room.answers.includes(:user)
     end
 

@@ -1,10 +1,14 @@
-<div class="roombody">
+<div class="new-roombody">
     <%= render "shared/side_list" %>
     <div class="analysis">
         <%= form_with(model:@room, url: rooms_path, method: :post, local: true) do |f| %>
                 <p>目標を決めてください</p>
-                <%= f.text_field :target ,id: "target"%>
-                <%= f.submit '目標の決定', id: "target-submit" %>
+                <div class="new-form form-group">
+                    <%= f.text_area :target ,id: "target", rows: "1", class: "form-control" %>
+                    </div>
+                    <div class="new-form form-group">
+                    <%= f.submit '決定', id: "target-submit", class: "form-control btn btn-success" %>
+                </div>
         <% end %>
     </div>
 </div>

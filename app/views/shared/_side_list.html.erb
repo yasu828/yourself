@@ -1,13 +1,15 @@
-<nav>left
-        <h1>hello</h1>
-        <%# <%= link_to '分析一覧にいく', answer_path(current_user), method: :get, class: "login" %>
-        <div class="1side-list">
-            <ul class="menu-list">リスト
-        <% @rooms.each do |room| %>
-            <li><%= link_to "#{room.target}", room_path(room.id) %></li>
-            <p></p>
-        <% end %>
-            </ul>
+<nav>
+    <h1>MenuList</h1>
+    <%# <%= link_to '分析一覧にいく', answer_path(current_user), method: :get, class: "login" %>
+    <div class="1side-list">
+        <div>
+            <select class="btn btn-success">リスト
+                <option value="">過去の分析一覧</option>
+                <% @rooms.each do |room| %>
+                    <option><%= link_to "#{room.target}", room_path(room.id) %></option>
+                    <p></p>
+                <% end %>
+            </select>
         </div>
-        <p><%= link_to '過去の分析一覧', url:"#"%></p>
+    </div>    
 </nav>
