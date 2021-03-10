@@ -1,8 +1,8 @@
 class RoomsController < ApplicationController
     before_action :authenticate_user!
+    before_action :room_all,  only: [:index, :new, :show]
 
     def index
-        @rooms = Room.all
     end
 
     def new
@@ -19,7 +19,6 @@ class RoomsController < ApplicationController
     end
 
     def show
-        @rooms = Room.all
         @room = Room.find(params[:id])
         @answer = Answer.new
         @answer.save
@@ -32,5 +31,8 @@ class RoomsController < ApplicationController
         params.require(:room).permit(:target).merge(user_id: current_user.id)
     end
 
+    def room_all
+        @rooms = Room.all
+    end
 
 end
