@@ -50,7 +50,7 @@ nav{
         "......  ......     ......     ......      ......" 10px
         "header  header     header     header      header" 15px
         "......  ......     ......     ......      ......" 5px
-        "......  ......     analysis   ......      right"  160px
+        "......  ......     will       ......      right"  160px
         "left    explan     explan     explan      right"  500px
         "......  explan     explan     explan      ......" 1fr
         "......  explan     explan     explan      ......" 120px
@@ -60,4 +60,14 @@ nav{
 
 .new-form{
     display: block;
+}
+
+.will{
+    grid-area: will;
+    padding: 30px 3px;
+    text-align: center;
+}
+
+.sengen{
+    font-size: 20px;
 }

@@ -1,8 +1,8 @@
 <div class="new-roombody">
     <%= render "shared/side_list" %>
-    <div class="analysis">
+    <div class="will">
         <%= form_with(model:@room, url: rooms_path, method: :post, local: true) do |f| %>
-                <p>目標を決めてください</p>
+                <p class="sengen">目標を宣言してください</p>
                 <div class="new-form form-group">
                     <%= f.text_area :target ,id: "target", rows: "1", class: "form-control" %>
                     </div>
