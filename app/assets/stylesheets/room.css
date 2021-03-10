@@ -22,6 +22,7 @@ header{
 
 nav{
     grid-area: left;
+    margin: 0 20px;
 }
 
 .analysis{
@@ -34,4 +35,39 @@ nav{
     grid-area: explan;
     padding: 30px 3px;
     text-align: center;
+}
+
+
+/* 以降はルーム作成ページ */
+
+.new-roombody{
+    width: 100vw;
+    background-color: beige;
+    border: black solid 1px;
+    min-height: 100vh;
+    display: grid;
+    grid-template:
+        "......  ......     ......     ......      ......" 10px
+        "header  header     header     header      header" 15px
+        "......  ......     ......     ......      ......" 5px
+        "......  ......     will       ......      right"  160px
+        "left    explan     explan     explan      right"  500px
+        "......  explan     explan     explan      ......" 1fr
+        "......  explan     explan     explan      ......" 120px
+        "footer  footer     footer     footer      footer" 150px
+        / 180px  1fr        1fr        1fr         180px;
+}
+
+.new-form{
+    display: block;
+}
+
+.will{
+    grid-area: will;
+    padding: 30px 3px;
+    text-align: center;
+}
+
+.sengen{
+    font-size: 20px;
 }

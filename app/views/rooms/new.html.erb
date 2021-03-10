@@ -1,5 +1,14 @@
-<%= form_with(model:@room, url: rooms_path, method: :post, local: true) do |f| %>
-        目標を決めてください
-            <%= f.text_field :target ,id: "target"%>
-            <%= f.submit '目標の決定', id: "target-submit" %>
-<% end %>
+<div class="new-roombody">
+    <%= render "shared/side_list" %>
+    <div class="will">
+        <%= form_with(model:@room, url: rooms_path, method: :post, local: true) do |f| %>
+                <p class="sengen">目標を宣言してください</p>
+                <div class="new-form form-group">
+                    <%= f.text_area :target ,id: "target", rows: "1", class: "form-control" %>
+                    </div>
+                    <div class="new-form form-group">
+                    <%= f.submit '決定', id: "target-submit", class: "form-control btn btn-success" %>
+                </div>
+        <% end %>
+    </div>
+</div>
