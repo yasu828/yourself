@@ -17,9 +17,6 @@
         / 180px  1fr        1fr          1fr         1fr;
 }
 
-header{
-    grid-area: header;
-}
 
 nav{
     grid-area: left;
@@ -74,22 +71,12 @@ footer{
     border: 2px red solid;
 }
 
-
-.sepa{
-    width: 85vw;
-}
-
 .postlist{
     height: 50px;
     width: 180px;
 
 }
 
-.post{
-    
-    border: 1px lightgreen solid;
-    padding: 3px;
-}
 
 .conectline{
     height: 5px;

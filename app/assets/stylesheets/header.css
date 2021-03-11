@@ -1,0 +1,18 @@
+.header-nav{
+    background-color: bisque;
+    
+}
+
+header{
+    grid-area: header;
+    background-color: bisque;
+}
+
+.header-margin{
+    margin: 20px 20px 0;
+}
+
+.lists-right{
+    display: flex;
+    justify-content: space-between;
+}
