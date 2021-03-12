@@ -3,13 +3,11 @@
     width: 100vw;
     background-color: beige;
     border: black solid 1px;
-    margin: 0 20px;
     min-height: 100vh;
     display: grid;
     grid-template:
-        "......  ......     ......       ......      ......" 10px
         "header  header     header       header      header" 15px
-        "......  ......     ......       ......      ......" 5px
+        "header  header     header       header      header" 15px
         "left    center     center       center      right"  160px
         "left    main-left  main-center  main-right  right" 1fr
         "......  ......     ......       ......      ......" 120px
@@ -18,16 +16,14 @@
 }
 
 
-nav{
-    grid-area: left;
-}
+
 
 main{
     grid-area: center;
 }
 .main-top{
     display: block;
-    margin: 25px auto 5px;
+    /* margin: 25px auto 5px; */
 }
 
 .main-left{
@@ -50,11 +46,11 @@ aside{
 footer{
     grid-area: footer;
 }
-
+/* 
 .mokuhyo{
     resize: none;
     padding: 10px;
-}
+} */
 
 .form-group{
     display: flex;
@@ -62,7 +58,7 @@ footer{
 
 .side-list{
     width: 15vw;
-    margin: 5px 5px;    
+    /* margin: 5px 5px;     */
 }
 
 .menu-list{

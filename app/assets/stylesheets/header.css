@@ -1,18 +1,24 @@
+header{
+    background-color: bisque;
+}
+
+
 .header-nav{
     background-color: bisque;
     
 }
 
 header{
+    height: 100px;
     grid-area: header;
-    background-color: bisque;
 }
 
 .header-margin{
-    margin: 20px 20px 0;
+    padding: 20px 20px 0;
 }
 
-.lists-right{
+.header-menu{
+    background-color: bisque;
     display: flex;
     justify-content: space-between;
 }

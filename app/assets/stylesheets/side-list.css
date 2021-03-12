@@ -1,3 +1,7 @@
 .menulist{
     font-size: 25px;
 }
+
+nav{
+    grid-area: left;
+}

@@ -1,17 +1,19 @@
-<div class='header-nav'>
-  <div class="header-margin">
-    <%= link_to 'ホームへ戻る', root_path, class: "root-back" %>
+<header>
+  <div class='header-nav'>
+    <div class="header-margin">
+      <%= link_to image_tag('search-picture.png', class:"app-log", url: root_path, size: "140x70"), "#"%>
 
-    <ul>
-      <% if user_signed_in? %>
-      <div class="lists-right">
-        <li><%= link_to current_user.nickname, edit_user_registration_path, class: "user-nickname" %></li>
-        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout"  %></li>
-      </div>
-      <% else %>
-        <li><%= link_to 'ログイン', user_session_path, class: "login" %></li>
-        <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
-      <% end %>
-    </ul>
+      <ul>
+        <% if user_signed_in? %>
+        <div class="header-menu">
+          <li><%= link_to current_user.nickname, edit_user_registration_path, class: "user-nickname" %></li>
+          <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout btn btn-outline-primary"  %></li>
+        </div>
+        <% else %>
+          <li><%= link_to 'ログイン', user_session_path, class: "login btn btn-outline-primary" %></li>
+          <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up btn btn-outline-primary" %></li>
+        <% end %>
+      </ul>
+    </div>
   </div>
-</div>
+</header>
