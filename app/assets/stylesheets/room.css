@@ -2,13 +2,11 @@
     width: 100vw;
     background-color: beige;
     border: black solid 1px;
-    margin: 0 20px;
     min-height: 100vh;
     display: grid;
     grid-template:
-        "......  ......     ......     ......      ......" 10px
+        "header  header     header       header      header" 15px
         "header  header     header     header      header" 15px
-        "......  ......     ......     ......      ......" 5px
         "left    analysis   analysis   analysis    right"  160px
         "left    explan     explan     explan      right" 1fr
         "......  explan     explan     explan      ......" 120px
@@ -22,18 +20,18 @@ header{
 
 nav{
     grid-area: left;
-    margin: 0 20px;
+    /* margin: 0 20px; */
 }
 
 .analysis{
     grid-area: analysis;
-    padding: 30px 3px;
+    /* padding: 30px 3px; */
     text-align: center;
 }
 
 .explan{
     grid-area: explan;
-    padding: 30px 3px;
+    /* padding: 30px 3px; */
     text-align: center;
 }
 
@@ -47,9 +45,8 @@ nav{
     min-height: 100vh;
     display: grid;
     grid-template:
-        "......  ......     ......     ......      ......" 10px
+        "header  header     header       header      header" 15px
         "header  header     header     header      header" 15px
-        "......  ......     ......     ......      ......" 5px
         "......  ......     will       ......      right"  160px
         "left    explan     explan     explan      right"  500px
         "......  explan     explan     explan      ......" 1fr
@@ -64,10 +61,6 @@ nav{
 
 .will{
     grid-area: will;
-    padding: 30px 3px;
+    /* padding: 30px 3px; */
     text-align: center;
-}
-
-.sengen{
-    font-size: 20px;
 }
