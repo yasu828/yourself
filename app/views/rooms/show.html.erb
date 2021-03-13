@@ -16,7 +16,7 @@
         <% end %>
         <%= form_with model: [@room, @answer] do |f| %>
             <%= f.text_area :ans, placeholder: "コメントする", rows: "1" %>
-            <%= f.select :point, [["左です！","1"]] %>
+            <span class="separate"><%= f.select :point, [["左です！","1"]] %></span>
             <%= f.submit "SEND" %>
         <% end %>
     </div>
@@ -33,23 +33,25 @@
             <% end %>
         <%= form_with model: [@room, @answer] do |f| %>
             <%= f.text_area :ans, placeholder: "コメントする", rows: "1" %>
-            <%= f.select :point, [["中です！","2"]] %>
+            <span class="separate"><%= f.select :point, [["中です！","2"]] %></span>
             <%= f.submit "SEND" %>
         <% end %>
     </div>
 
     <div class="main-right">右
-        <% @answers.each do |an| %>
-            <% if an.point == 3 %>
-                <br><%= an.ans %>
-                <% next %>
-            <% else %>
-                <% next %>
+        <div class="show-ans">
+            <% @answers.each do |an| %>
+                <% if an.point == 3 %>
+                    <br><%= an.ans %>
+                    <% next %>
+                <% else %>
+                    <% next %>
+                <% end %>
             <% end %>
-        <% end %>
+            </div>
         <%= form_with model: [@room, @answer] do |f| %>
             <%= f.text_area :ans, placeholder: "コメントする", rows: "1" %>
-            <%= f.select :point, [["右です！","3"]] %>
+            <span class="separate"><%= f.select :point, [["右です！","3"]] %></span>
             <%= f.submit "SEND" %>
         <% end %>
     </div>

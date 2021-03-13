@@ -15,9 +15,6 @@
         / 180px  1fr        1fr          1fr         1fr;
 }
 
-
-
-
 main{
     grid-area: center;
 }
@@ -46,11 +43,6 @@ aside{
 footer{
     grid-area: footer;
 }
-/* 
-.mokuhyo{
-    resize: none;
-    padding: 10px;
-} */
 
 .form-group{
     display: flex;
@@ -88,4 +80,9 @@ footer{
 .ansnum{
    
     margin-left: 15px;
-} 
+}
+
+.separate{
+    display: none;
+}
+
