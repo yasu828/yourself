@@ -8,7 +8,9 @@
     <div class="main-left">左
         <% @answers.each do |an| %>
             <% if an.point == 1 %>
-                <br><%= an.ans %>
+                <div class="show-ans border border-success shadow p-1 mb-4 bg-white rounded">
+                    <%= an.ans %>
+                </div>
                 <% next %>
             <% else %>
                 <% next %>
@@ -22,15 +24,17 @@
     </div>
 
     <div class="main-center">中
-            <% @answers.each do |an| %>
-                <% if an.point == 2 %>
-                    <br>
-                    <%= an.ans %>
-                    <% next %>
-                <% else %>
-                    <% next %>
+                <% @answers.each do |an| %>
+                    <% if an.point == 2 %>
+                        <%# <br> %>
+                        <div class="show-ans border border-success shadow p-1 mb-4 bg-white rounded">
+                            <%= an.ans %>
+                        </div>
+                        <% next %>
+                    <% else %>
+                        <% next %>
+                    <% end %>
                 <% end %>
-            <% end %>
         <%= form_with model: [@room, @answer] do |f| %>
             <%= f.text_area :ans, placeholder: "コメントする", rows: "1" %>
             <span class="separate"><%= f.select :point, [["中です！","2"]] %></span>
@@ -39,16 +43,16 @@
     </div>
 
     <div class="main-right">右
-        <div class="show-ans">
-            <% @answers.each do |an| %>
-                <% if an.point == 3 %>
-                    <br><%= an.ans %>
-                    <% next %>
-                <% else %>
-                    <% next %>
-                <% end %>
+        <% @answers.each do |an| %>
+            <% if an.point == 3 %>
+                <div class="show-ans border border-success shadow p-1 mb-4 bg-white rounded">
+                    <%= an.ans %>
+                </div>
+                <% next %>
+            <% else %>
+                <% next %>
             <% end %>
-            </div>
+        <% end %>
         <%= form_with model: [@room, @answer] do |f| %>
             <%= f.text_area :ans, placeholder: "コメントする", rows: "1" %>
             <span class="separate"><%= f.select :point, [["右です！","3"]] %></span>
