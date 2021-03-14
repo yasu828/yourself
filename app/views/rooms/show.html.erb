@@ -1,15 +1,20 @@
 <div class="UI_Build_Assistant homebody">
+
     <%= render "shared/side_list" %>
     <main class="text-center">
-        <%= @room.target %>
-        <p class="text-center">何故そうありたいですか？</p>
+        <div class="target-name shadow box17">
+            <b><%= @room.target %></b>
+        </div>
+        <p class="text-center ">何故そうありたいですか？</p>
     </main>
 
-    <div class="main-left">左
+    <div class="main-left">
         <% @answers.each do |an| %>
             <% if an.point == 1 %>
-                <div class="show-ans border border-success shadow p-1 mb-4 bg-white rounded">
+                <div class="show-ans border border-success shadow p-1 bg-white rounded">
                     <%= an.ans %>
+                </div>
+                <div class="center-line text-center">|
                 </div>
                 <% next %>
             <% else %>
@@ -17,18 +22,25 @@
             <% end %>
         <% end %>
         <%= form_with model: [@room, @answer] do |f| %>
-            <%= f.text_area :ans, placeholder: "コメントする", rows: "1" %>
+            <div class="d">
+                <%= f.text_area :ans, placeholder: "コメントする", rows: "1", class:"form-control" %>
+            </div>
             <span class="separate"><%= f.select :point, [["左です！","1"]] %></span>
-            <%= f.submit "SEND" %>
+            <div class="d">
+                <%= f.submit "SEND", class:"send-btn" %>
+            </div>
         <% end %>
     </div>
 
-    <div class="main-center">中
+    <div class="main-center">
                 <% @answers.each do |an| %>
                     <% if an.point == 2 %>
-                        <%# <br> %>
-                        <div class="show-ans border border-success shadow p-1 mb-4 bg-white rounded">
+                        <div class="show-ans border border-success shadow p-1 bg-white rounded">
                             <%= an.ans %>
+                        </div>
+                        <div class="center-line">
+                            <div class="center-line text-center">|
+                            </div>
                         </div>
                         <% next %>
                     <% else %>
@@ -36,17 +48,23 @@
                     <% end %>
                 <% end %>
         <%= form_with model: [@room, @answer] do |f| %>
-            <%= f.text_area :ans, placeholder: "コメントする", rows: "1" %>
+            <div class="d">
+                <%= f.text_area :ans, placeholder: "コメントする", rows: "1", class:"form-control" %>
+            </div>
             <span class="separate"><%= f.select :point, [["中です！","2"]] %></span>
-            <%= f.submit "SEND" %>
+            <div class="d">
+                <%= f.submit "SEND" %>
+            </div>
         <% end %>
     </div>
 
-    <div class="main-right">右
+    <div class="main-right">
         <% @answers.each do |an| %>
             <% if an.point == 3 %>
-                <div class="show-ans border border-success shadow p-1 mb-4 bg-white rounded">
+                <div class="show-ans border border-success shadow p-1 bg-white rounded">
                     <%= an.ans %>
+                </div>
+                <div class="center-line text-center">|
                 </div>
                 <% next %>
             <% else %>
@@ -54,9 +72,13 @@
             <% end %>
         <% end %>
         <%= form_with model: [@room, @answer] do |f| %>
-            <%= f.text_area :ans, placeholder: "コメントする", rows: "1" %>
+            <div class="d">
+                <%= f.text_area :ans, placeholder: "コメントする", rows: "1", class:"form-control" %>
+            </div>
             <span class="separate"><%= f.select :point, [["右です！","3"]] %></span>
-            <%= f.submit "SEND" %>
+            <div class="d">
+                <%= f.submit "SEND" %>
+            </div>
         <% end %>
     </div>
 

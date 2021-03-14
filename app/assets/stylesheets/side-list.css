@@ -5,3 +5,7 @@
 nav{
     grid-area: left;
 }
+
+.side-list{
+    width: 190px;
+}
