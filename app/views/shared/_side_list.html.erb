@@ -2,7 +2,7 @@
     <p class="menulist">MenuList</p>
     <div>
         <div>
-            <select class="btn btn-success">リスト
+            <select class="btn btn-success side-list">リスト
                 <option value="">過去の分析一覧</option>
                 <% @rooms.each do |room| %>
                     <option><%= link_to "#{room.target}", room_path(room.id) %></option>

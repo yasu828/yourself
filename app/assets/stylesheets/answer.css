@@ -9,14 +9,11 @@
         "header  header     header       header      header" 15px
         "header  header     header       header      header" 15px
         "left    center     center       center      right"  160px
-        "left    main-left  main-center  main-right  right" 1fr
+        "left    main-left  main-center  main-right  right"  1fr
         "......  ......     ......       ......      ......" 120px
         "footer  footer     footer       footer      footer" 150px
-        / 180px  1fr        1fr          1fr         1fr;
+        / 200px  1fr        1fr          1fr         200px;
 }
-
-
-
 
 main{
     grid-area: center;
@@ -46,11 +43,6 @@ aside{
 footer{
     grid-area: footer;
 }
-/* 
-.mokuhyo{
-    resize: none;
-    padding: 10px;
-} */
 
 .form-group{
     display: flex;
@@ -88,4 +80,49 @@ footer{
 .ansnum{
    
     margin-left: 15px;
-} 
+}
+
+.separate{
+    display: none;
+}
+
+.center-line{
+    font-size: large;
+}
+
+.target-name{
+    background: white;
+    padding: 0.2em 0.5em;
+    display: inline-block;
+    font-size: 120%;
+    font-family:"Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体";
+}
+
+.box17{
+    margin:2em 0;
+    position: relative;
+    padding: 0.5em 1.5em;
+    border-top: solid 2px green;
+    border-bottom: solid 2px green;
+}
+.box17:before, .box17:after{
+    content: '';
+    position: absolute;
+    top: -10px;
+    width: 2px;
+    height: -webkit-calc(100% + 20px);
+    height: calc(100% + 20px);
+    background-color: green;
+}
+.box17:before {left: 10px;}
+.box17:after {right: 10px;}
+.box17 p {
+    margin: 0; 
+    padding: 0;
+}
+
+.send-btn{
+    margin-top: 6px;
+    display: flex;
+    justify-content: center;
+}
