@@ -120,3 +120,9 @@ footer{
     margin: 0; 
     padding: 0;
 }
+
+.send-btn{
+    margin-top: 6px;
+    display: flex;
+    justify-content: center;
+}

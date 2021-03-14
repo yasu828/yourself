@@ -26,8 +26,8 @@
                 <%= f.text_area :ans, placeholder: "コメントする", rows: "1", class:"form-control" %>
             </div>
             <span class="separate"><%= f.select :point, [["左です！","1"]] %></span>
-            <div class="d">
-                <%= f.submit "SEND", class:"send-btn" %>
+            <div class="send-btn">
+                <%= f.submit "送信する", class:"btn btn-success" %>
             </div>
         <% end %>
     </div>
@@ -52,8 +52,8 @@
                 <%= f.text_area :ans, placeholder: "コメントする", rows: "1", class:"form-control" %>
             </div>
             <span class="separate"><%= f.select :point, [["中です！","2"]] %></span>
-            <div class="d">
-                <%= f.submit "SEND" %>
+            <div class="send-btn">
+                <%= f.submit "送信する", class:"btn btn-success" %>
             </div>
         <% end %>
     </div>
@@ -76,8 +76,8 @@
                 <%= f.text_area :ans, placeholder: "コメントする", rows: "1", class:"form-control" %>
             </div>
             <span class="separate"><%= f.select :point, [["右です！","3"]] %></span>
-            <div class="d">
-                <%= f.submit "SEND" %>
+            <div class="send-btn">
+                <%= f.submit "送信する", class:"btn btn-success" %>
             </div>
         <% end %>
     </div>
