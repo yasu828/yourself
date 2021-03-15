@@ -1,16 +1,18 @@
 <div class="roombody">
     <%= render "shared/side_list" %>
     <div class="analysis">
-        <%= link_to '自己分析する', new_room_path %>
-      
-        <p><%= link_to '過去の分析一覧', url:"#"%></p>
-        <% @rooms.each do |room| %>
-        <%= link_to "#{room.target}", room_path(room.id) %>
-        <p></p>
-        <% end %>
+        <div class="analysis-content">
+            <%= link_to '自己分析を始める', new_room_path, class:"btn btn-success analysis-size" %>
+        </div>
     </div>
     
     <div class="explan">
-        機能説明
+        <div class="text-center">
+            機能説明
+        </div>
+        <div class="explan-text">
+            <%= render "shared/contents" %>
+
+        </div>
     </div>
 </div>
