@@ -5,6 +5,7 @@
     min-height: 100vh;
     display: grid;
     grid-template:
+        "....    ......     ......     ......     ......"  30px
         "left    analysis   analysis   analysis   right"   160px
         "left    explan     explan     explan     right"   1fr
         "left    explan     explan     explan     ......"  1fr
@@ -56,12 +57,12 @@ nav{
     grid-template:
         "header  header     header       header      header" 15px
         "header  header     header     header      header" 15px
-        "......  ......     will       ......      right"  160px
+        "left    ......     will       ......      right"  160px
         "left    explan     explan     explan      right"  500px
         "......  explan     explan     explan      ......" 1fr
         "......  explan     explan     explan      ......" 120px
         "footer  footer     footer     footer      footer" 150px
-        / 180px  1fr        1fr        1fr         180px;
+        / 220px  1fr        1fr        1fr         180px;
 }
 
 .new-form{

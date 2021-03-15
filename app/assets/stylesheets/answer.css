@@ -12,7 +12,7 @@
         "left    main-left  main-center  main-right  right"  1fr
         "......  ......     ......       ......      ......" 120px
         "footer  footer     footer       footer      footer" 150px
-        / 200px  1fr        1fr          1fr         200px;
+        / 220px  1fr        1fr          1fr         200px;
 }
 
 main{
