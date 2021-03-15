@@ -5,13 +5,10 @@
     min-height: 100vh;
     display: grid;
     grid-template:
-        "header  header     header     header      header" 15px
-        "header  header     header     header      header" 15px
-        "left    analysis   analysis   analysis   right"  160px
-        "left    explan     explan     explan     right"  1fr
-        "......  explan     explan     explan     ......" 1fr
-        "footer  footer     footer     footer     footer" 150px
-        / 180px  1fr        1fr        1fr         180px;
+        "left    analysis   analysis   analysis   right"   160px
+        "left    explan     explan     explan     right"   1fr
+        "left    explan     explan     explan     ......"  1fr
+        / 220px  1fr        1fr        1fr        180px;
 }
 
 header{
@@ -20,7 +17,8 @@ header{
 
 nav{
     grid-area: left;
-    /* margin: 0 20px; */
+    margin: 0 5px 0 15px;
+    border-right: rgb(233, 230, 227) 2px dashed;
 }
 
 .analysis{
@@ -36,7 +34,7 @@ nav{
 
 .explan{
     grid-area: explan;
-    /* padding: 30px 3px; */
+    padding: 0 3px;
 }
 
 .text-templet{
