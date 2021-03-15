@@ -29,13 +29,14 @@ nav{
     text-align: center;
 }
 
+.analysis-size{
+    width: 270px;
+    height: 45px;
+}
+
 .explan{
     grid-area: explan;
     /* padding: 30px 3px; */
-}
-
-.explan-text{
-
 }
 
 .text-templet{

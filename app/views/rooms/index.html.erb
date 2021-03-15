@@ -1,7 +1,9 @@
 <div class="roombody">
     <%= render "shared/side_list" %>
     <div class="analysis">
-        <%= link_to '自己分析を始める', new_room_path, class:"btn btn-success" %>
+        <div class="analysis-content">
+            <%= link_to '自己分析を始める', new_room_path, class:"btn btn-success analysis-size" %>
+        </div>
     </div>
     
     <div class="explan">
