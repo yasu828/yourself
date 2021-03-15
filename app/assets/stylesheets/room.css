@@ -32,7 +32,17 @@ nav{
 .explan{
     grid-area: explan;
     /* padding: 30px 3px; */
-    text-align: center;
+}
+
+.explan-text{
+
+}
+
+.text-templet{
+    background-color: ivory;
+    height: 580px;
+    padding: 5px 10px;
+    overflow: auto;
 }
 
 
